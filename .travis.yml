@@ -1,4 +1,4 @@
 language: c
 compiler: gcc
 before_install: chmod 777 ./travis-build.sh
-install: travis_wait mvn ./travis-build.sh
+install: travis_wait 20 ./travis-build.sh
