@@ -1,4 +1,4 @@
 language: c
 compiler: gcc
-before_install: chmod 777 ./travis-build.sh /* Make travis-build.sh executable. */
-install: ./travis-build.sh /* Run travis-build.sh with wait time 10 minutes. */
+before_install: chmod 777 ./travis-build.sh # Make travis-build.sh executable.
+install: ./travis-build.sh # Run travis-build.sh with wait time 10 minutes.
