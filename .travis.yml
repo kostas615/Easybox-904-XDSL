@@ -1,4 +1,10 @@
+# Travis-ci uses ./travis-build.sh to build the openwrt firmware.
 language: c
 compiler: gcc
 before_install: chmod 777 ./travis-build.sh # Make travis-build.sh executable.
-install: travis_timeout 10 ./travis-build.sh # Run travis-build.sh with wait time 10 minutes.
+install: 
+    # Output something every 9 minutes or Travis kills the job
+    - while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+    - ./travis-build.sh
+    # Killing background sleep loop
+    - kill %1
